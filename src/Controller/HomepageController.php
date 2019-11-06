@@ -6,7 +6,7 @@ use App\Controller\AbstractController;
 class HomepageController{
 
     public function index(array $uriVars):void {
-        var_dump($uriVars);
+        //var_dump($uriVars);
         //echo 'Homepage controller index';
         //appel de la vue située dans le dossier templates
         $this->render('homepage/index'

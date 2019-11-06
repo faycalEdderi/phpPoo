@@ -7,7 +7,7 @@ use App\Controller\AbstractController;
 class NotFoundController extends AbstractController{
 
     public function index(array $uriVars):void {
-        var_dump($uriVars);
+        //var_dump($uriVars);
         //echo 'Homepage controller index';
         //appel de la vue située dans le dossier templates
         $this->render('not-found/index'

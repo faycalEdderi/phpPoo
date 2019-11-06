@@ -17,9 +17,21 @@ class Router{
     private $routes = [
         //'#^/(?<id>\d+)$#' => [
         '#^/$#' => [
-            'controller' => 'HomepageController',
+            //'controller' => 'HomepageController' sans l'injecion de dépendance
+            'controller' => 'controller.homepage', // avec
             'method' => 'index'
+        ],
+        '#^/team$#' => [
+            //'controller' => 'HomepageController' sans l'injecion de dépendance
+            'controller' => 'controller.team', // avec
+            'method' => 'index'
+        ],
+        '#^/team/[a-z]/[a-z]$#' => [
+            //'controller' => 'HomepageController' sans l'injecion de dépendance
+            'controller' => 'controller.team', // avec
+            'method' => 'firtlastName'
         ]
+
     ];
 
 
@@ -29,13 +41,13 @@ class Router{
      */
     public function getRoute():array{
         
-    //stocker le sgroupe de l'expression rationnelle
+    //stocker les groupeS de l'expression rationnelle
     $uriVars = [];
 
     //stocker la route contenue dans l'url
     //route par défaut
     $route = [
-        'controller' => 'NotfoundController',
+        'controller' => 'controller.notfound',
         'method' => 'index'
     ];
 
