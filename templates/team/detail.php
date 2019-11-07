@@ -8,25 +8,26 @@
 <div class ="container" >
     <div class ="row">
         <div class ="col">
-            <h1>TEAM</h1>
+            
             <br>
             <?php
             $html = '';
-            foreach($team as $fullname => $person){
+            
                 // le "." permet de faire grossir le html
                 $html .= "
-                <div class='col-sm-6'>
-                <img src='{$person["photo"]}' class='img-fluid'>
-                <p class='mt-5'>
-                    <a href='/team/$fullname' class='btn btn-primary'>
-                    
+                <div class='col-sm-3'>
+                <img src='{$person["photo"]}' class='img-fluid '>
+                </div>
+                
+                <div class='col-sm-9'>
+                <h1 class='mt-3'>
+              
                     {$person["nom"]} {$person["prenom"]}
-                    
-                    </a>
-                </p>
+             
+                </h1>
                 </div>
                 ";
-            }
+            
             //affichage du html 
             echo $html;
             ?>

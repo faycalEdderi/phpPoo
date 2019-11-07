@@ -4,30 +4,38 @@ namespace App\Controller;
 use App\Controller\AbstractController;
 
 class TeamController extends AbstractController{
-    public function index():void{
-        $list = [
-            'p1'=> [ 
-                "nom" => "Kondo",
-                "prenom" => "Yutsu",
+
+     private  $list = [
+            'Jean-Jacque'=> [ 
+                "nom" => "Jacque",
+                "prenom" => "Jean",
                 "email" => "yutsu@hotmail.fr",
                 "poste" => "meh",
-                "photo" => "akko" 
+                //definir le chemin des image ici 
+                "photo" => "/images/jean.jpg" 
             ],
-            'p2'=> [ 
-                "nom" => "Lala",
-                "prenom" => "Fafa",
+            'Elon-Musk'=> [ 
+                "nom" => "Musk",
+                "prenom" => "Elon",
                 "email" => "Lafa@hotmail.fr",
                 "poste" => "meh",
-                "photo" => "ikk" 
+                "photo" => "/images/elon.jpeg" 
             ]
             
         ];
-        AbstractController::render('team/index', ['list' => $list]);
+    
+
+    public function index(array $uriVars = []){
+        
+        $this->render('team/index', ['team' => $this->list]);
     }
 
-    public function firtlastName():string{
-        
-        AbstractController::render('team/index2', ['list' => $list]);
+
+    public function detail(array $uriVars = []){
+       // echo '<pre>', var_dump($uriVars); echo '</pre>'; exit;
+        $this->render('team/detail', [
+            'person'=>$this->list[$uriVars['fullname']]
+        ]);
     }
 }
 ?>

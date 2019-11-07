@@ -26,11 +26,14 @@ class Router{
             'controller' => 'controller.team', // avec
             'method' => 'index'
         ],
-        '#^/team/[a-z]/[a-z]$#' => [
-            //'controller' => 'HomepageController' sans l'injecion de dépendance
-            'controller' => 'controller.team', // avec
-            'method' => 'firtlastName'
+        //accepte toutes les minuscule, les majuscule et le tiret du 6 et plusieurs caracteres
+        '#^/team/(?<fullname>[a-zA-Z-]+)$#' => [
+        
+            'controller' => 'controller.team', 
+            'method' => 'detail'
         ]
+        
+
 
     ];
 
