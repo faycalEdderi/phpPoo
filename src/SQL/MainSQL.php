@@ -20,15 +20,16 @@ class MainSQL
     CREATE DATABASE videogames;
     CREATE TABLE videogames.game(
         id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT, 
-        name VARCHAR(50), 
+        name VARCHAR(50),
+        editor VARCHAR(50), 
         price DECIMAL(5,2),
         date DATE,
         poster VARCHAR(50)
     );
     INSERT INTO videogames.game VALUES
-    (NULL, 'The Witcher3', '25.90', '2019-01-10', 'jeu1.jpg'),
-    (NULL, 'Death Stranding', '50.90', '2019-02-10', 'jeu2.jpg'),
-    (NULL, 'Uncharted 4', '29.90', '2019-03-10', 'jeu3.jpg')
+    (NULL, 'The Witcher3','CD Projekt', '25.90', '2019-01-10', 'jeu1.jpg'),
+    (NULL, 'Death Stranding','Sony', '50.90', '2019-02-10', 'jeu2.jpg'),
+    (NULL, 'Uncharted 4','Naughty Dog', '29.90', '2019-03-10', 'jeu3.jpg')
     ;
     COMMIT;
     

@@ -24,10 +24,17 @@ class Router{
         '#^/team$#' => [
             //'controller' => 'HomepageController' sans l'injecion de dépendance
             'controller' => 'controller.team', // avec
-            'method' => 'index'
+            'method' => 'index',
+           
         ],
         //accepte toutes les minuscule, les majuscule et le tiret du 6 et plusieurs caracteres
-        '#^/team/(?<fullname>[a-zA-Z-]+)$#' => [
+        '#^/game/form$#' => [
+        
+            'controller' => 'controller.game', 
+            'method' => 'form'
+        ],
+
+        '#^/form/(?<fullname>[a-zA-Z-]+)$#' => [
         
             'controller' => 'controller.team', 
             'method' => 'detail'

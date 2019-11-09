@@ -35,4 +35,7 @@ public function getDate():string { return $this->date; }
 public function setPoster(string $poster):void { $this->poster = $poster; }
 public function getPoster():string { return $this->poster; }
 
+public function setEditor(string $editor):void { $this->editor = $editor; }
+public function getEditor():string { return $this->editor; }
+
 }

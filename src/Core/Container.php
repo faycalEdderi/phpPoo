@@ -34,14 +34,22 @@ class Container{
             'controller.team' => function(){
                 return new \App\Controller\TeamController();
             }, 
+            'controller.game' => function(){
+                return new \App\Controller\GameController(
+                    $this->services['core.database']()
+                );
+            },
+
+            
             'repository.game' => function(){
                 return new \App\Repository\GameRepository(
                     $this->services['core.database']()
                 );
             },
+          
         ];
     }
-
+    
     public function getService(string $serviceName){
         return $this->services[$serviceName]();
     }
